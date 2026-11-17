@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}CarePulse{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        🏥 <strong>CarePulse</strong>
+
+        <a href="/dashboard">🏠 Dashboard</a>
+        <a href="/admin">👨‍💼 Admin</a>
+        <a href="/doctors">👨‍⚕️ Doctors</a>
+        <a href="/appointments">📅 Appointments</a>
+        <a href="/billing">💰 Billing</a>
+        <a href="/records">📋 Medical Records</a>
+        <a href="/login">🚪 Logout</a>
+    </nav>
+
+    <div class="main">
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+</body>
+</html>

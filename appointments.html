@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Appointments</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>📅 Appointments</h1>
+
+<h2>Book Appointment</h2>
+
+<form method="POST">
+
+<input type="text" name="patient_name" placeholder="Patient Name" required>
+<br><br>
+
+<input type="text" name="doctor_name" placeholder="Doctor Name" required>
+<br><br>
+
+<input type="date" name="date" required>
+<br><br>
+
+<input type="text" name="time" placeholder="Time" required>
+<br><br>
+
+<select name="status">
+<option>Pending</option>
+<option>Confirmed</option>
+<option>Completed</option>
+</select>
+
+<br><br>
+
+<button type="submit">Book Appointment</button>
+
+</form>
+
+
+<table border="1" cellpadding="10">
+
+<tr>
+<th>Patient</th>
+<th>Doctor</th>
+<th>Date</th>
+</tr>
+
+
+{% for a in appointments %}
+
+<tr>
+<td>{{ a[1] }}</td>
+<td>{{ a[2] }}</td>
+<td>{{ a[3] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+<br>
+
+<a href="/dashboard">⬅ Back</a>
+
+</div>
+
+</body>
+</html>
